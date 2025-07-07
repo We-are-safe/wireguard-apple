@@ -14,6 +14,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     }()
 
     override func startTunnel(options: [String: NSObject]?, completionHandler: @escaping (Error?) -> Void) {
+        wg_log(.debug, staticMessage: "🚀 startTunnel called WRONG PLACE")
         let activationAttemptId = options?["activationAttemptId"] as? String
         let errorNotifier = ErrorNotifier(activationAttemptId: activationAttemptId)
 

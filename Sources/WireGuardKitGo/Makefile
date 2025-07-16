@@ -24,7 +24,7 @@ GOOS_iphoneos := ios
 build: $(DESTDIR)/libwg-go.a
 version-header: $(DESTDIR)/wireguard-go-version.h
 
-REAL_GOROOT := /usr/local/Cellar/go/1.24.5/libexec
+REAL_GOROOT := $(shell dirname $$(dirname $$(which go)))/1.24.5/libexec
 export GOROOT := $(BUILDDIR)/goroot
 $(GOROOT)/.prepared:
 	[ -n "$(REAL_GOROOT)" ]
